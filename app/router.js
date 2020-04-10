@@ -7,4 +7,9 @@ export default class Router extends EmberRouter {
 }
 
 Router.map(function() {
+	this.route('about');
+	
+	// Custom Paths : getting-in-touch를 contact.hbs로 ..
+	this.route('contact', { path: '/getting-in-touch'});
+
 });
