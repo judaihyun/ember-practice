@@ -1,17 +1,19 @@
 
+Anatomy of an Ember App
+========================
 
-# CLI command
+- 일반적으로 route Handler는 두 가지 일을 수행한다.
+It loads a model.
+It renders a template, which has access to the model.
 
-실행방법 
-: ember server
+- Models
+모델은 지속적인 상태를 나타낸다. 일반적으로 웹 서버에 정보를 유지한다.
 
-테스트 설치 방법
+- Templates
+Ember는 어플리케이션의 유저 인터페이스를 빌드하기 위해 templates을 사용한다.
 
-: 
-
-테스트 실행 방법
-: ember test --server or ember t -s  
-( localhost:7357 )
+정적 HTML에 handlerBar를 사용하여 동적 element를 생성한다.
+http://handlebarsjs.com/guide/#what-is-handlebars
 
 
 
