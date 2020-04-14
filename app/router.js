@@ -14,7 +14,8 @@ Router.map(function() {
 	// Custom Paths : getting-in-touch를 contact.hbs로 ..
 	this.route('contact', { path: '/getting-in-touch'});
 
-	this.route('route-name');
+	this.route('rental',{ path: '/rentals/:rental_id'});
+
 
 	this.route('not-found',{ path: '/*path'});
 

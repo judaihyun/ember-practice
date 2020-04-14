@@ -24,6 +24,8 @@ http://handlebarsjs.com/guide/#what-is-handlebars
 (Whenever this variable's value changes, Ember re-render templates
 that depend on its value.)
 
+@attr : these attributes correspond directly to the `attributes` data we expect the server to provide in its responses.
+
 ----------------------
 # Syntax
 
