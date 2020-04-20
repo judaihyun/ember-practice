@@ -12,6 +12,6 @@ export default class FirebaseService extends Service {
 		super(...arguments);
 		console.log('firebase service run!');
 		console.log(firebaseApp);
-		return '';
+		return firebaseApp;
 	}
 }

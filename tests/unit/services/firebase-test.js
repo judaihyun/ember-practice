@@ -2,42 +2,64 @@ import { module, test } from 'qunit';
 import { setupTest } from 'ember-qunit';
 import * as firebase from 'firebase/app';
 import 'firebase/firestore';
-import 'firebase/storage';
+import ENV from 'my-rentals/config/environment';
 
 module('Unit | Service | firebase | firestore', function(hooks) {
   setupTest(hooks);
-
   
-  const config = {
-      apiKey: "AIzaSyAdBwhIl6rGmY-8wumAqeti6Ct22P8TZlI",
-      authDomain: "my-firest-66bb6.firebaseapp.com",
-      databaseURL: "https://my-firest-66bb6.firebaseio.com",
-      projectId: "my-firest-66bb6",
-      storageBucket: "my-firest-66bb6.appspot.com",
-      messagingSenderId: "40672420477",
-      appId: "1:40672420477:web:705abbee4f1c5e0877c714",
-      measurementId: "G-YZM4R4Y0NY",
-    };
   
-  test('should be add', function(assert) {
-    var app = firebase.initializeApp(ENV.firebaseConfig);
-    var db = firebase.firestore(app);
+  const firebaseApp = firebase.initializeApp(ENV.firebaseConfig);
 
-    var result = db.collection("users").add({
-      first: "Ada",
+  hooks.beforeEach(function(){
+  })
+  const db = firebaseApp.firestore();
+  
+  test('should be init', function(assert){
+    assert.equal(db.XT, '[DEFAULT]');
+  });
+  
+  test('should be add', async function(assert) {
+    assert.ok(1);
+    return;
+    var result = await db.collection("TEST").doc('time').set({
+      first: "Test",
       last: "Lovelace",
-      born: 1815
+      born: 1815,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
     })
     .then(function(docRef) {
-      console.log(docRef);
       console.log("Document written with ID: ", docRef.id);
+      assert.ok(1);
     })
     .catch(function(error) {
       console.error("Error adding document: ", error);
+      assert.notOk();
     });
-
-    assert.ok(1);
-      
+ 
   });
+
+  test('should be read', async function(assert){
+    
+    /*
+    let result = await db.collection("TEST").get().then(q => {
+        q.forEach(doc=>{
+          console.log(`${doc.id} => ${doc.data()}`);
+        });
+      assert.ok(1);
+    });
+    */
+
+    let ret = await db.collection("TEST").doc('MYDOC')
+                  .get()
+                  .then(q=>{
+                    console.log(q.data());
+                      q.forEach(i=>{
+                        console.log(i);
+                      })
+                  });
+    assert.ok(1);
+
+  });
+
 
 });

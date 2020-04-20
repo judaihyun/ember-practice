@@ -40,3 +40,9 @@ https://api.emberjs.com/ember/release/modules/@ember%2Fservice
 ```
 @service('shopping-cart') cart;
 ```
+
+
+# Stubbing Services
+
+Component가 service를 의존할 경우 렌더링 테스트를 위해 의존성을 `stub`할 수 있다.
+
