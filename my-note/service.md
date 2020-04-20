@@ -28,6 +28,11 @@ Example uses of services might include :
 https://api.emberjs.com/ember/release/modules/@ember%2Fservice
 
 
+Sometimes a service may or may not exist, like when an initializer conditionally registers a service. Since normal injection will throw an error if the service doesn't exist, you must look up the service using Ember's getOwner instead.
+
+lookup하거나 initializer에 등록해야함.
+
+
 # Accessing Services
 
 다른 곳(모듈,파일등)에서 정의한 service를 사용하기 위해서는 
