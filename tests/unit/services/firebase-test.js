@@ -1,23 +1,21 @@
 import { module, test } from 'qunit';
 import { setupTest } from 'ember-qunit';
-import * as firebase from 'firebase/app';
-import 'firebase/firestore';
-import ENV from 'my-rentals/config/environment';
+import Service from '@ember/service';
+
+
 
 module('Unit | Service | firebase | firestore', function(hooks) {
   setupTest(hooks);
   
   
-  const firebaseApp = firebase.initializeApp(ENV.firebaseConfig);
-
-  hooks.beforeEach(function(){
-  })
-  const db = firebaseApp.firestore();
-  
   test('should be init', function(assert){
-    assert.equal(db.XT, '[DEFAULT]');
+    const fb = this.owner.lookup('service:firebase');
+    assert.equal(fb.store.XT, '[DEFAULT]');
+    fb.firebaseApp.delete();
+    fb.store.terminate();
   });
-  
+   
+  /*
   test('should be add', async function(assert) {
     assert.ok(1);
     return;
@@ -37,28 +35,22 @@ module('Unit | Service | firebase | firestore', function(hooks) {
     });
  
   });
+  
+  */
 
   test('should be read', async function(assert){
+    const fb = this.owner.lookup('service:firebase');
     
-    /*
-    let result = await db.collection("TEST").get().then(q => {
-        q.forEach(doc=>{
-          console.log(`${doc.id} => ${doc.data()}`);
-        });
-      assert.ok(1);
+    let ret = await fb.store.collection("TEST").doc('MYDOC')
+    .get()
+    .then(q=>{
+      console.log(q.data());
+      
     });
-    */
-
-    let ret = await db.collection("TEST").doc('MYDOC')
-                  .get()
-                  .then(q=>{
-                    console.log(q.data());
-                      q.forEach(i=>{
-                        console.log(i);
-                      })
-                  });
+    fb.firebaseApp.delete();
+    fb.store.terminate();
     assert.ok(1);
-
+    
   });
 
 
