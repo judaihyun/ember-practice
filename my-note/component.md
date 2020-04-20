@@ -63,3 +63,12 @@ https://guides.emberjs.com/release/components/looping-through-lists/
 
 <form> 전송하는 예제들..
 
+
+
+
+=============================================
+
+# Helper Function
+
+Helper functions are JS functions that you can call from your template.
+

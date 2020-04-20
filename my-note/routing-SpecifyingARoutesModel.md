@@ -3,6 +3,17 @@
 
 A route's JS file is one of the best places in an app to make requests to an API.
 
+- When a user first visits the `/favorites-posts` route, the `model` hook in `app/routes/favorite-posts.js` **will automatically run.**
+
+- `model` hook을 이용하여 없는 주요 이유는 
+1. better user experience
+2. 로딩 및 오류를 적절하게 사용하여 better user experience
+3. Dealing with concurrency
+
+- `service`에서 사용해도 좋다.
+
+
+
 예를들어 아래와 같이 router가 존재.
 
 ``` app/router.js
@@ -23,3 +34,4 @@ export default class FavoritePostsRoute extends Route {
   }
 }
 ```
+
