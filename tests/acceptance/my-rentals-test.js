@@ -3,23 +3,34 @@ import { click, find, visit, currentURL } from '@ember/test-helpers';
 import { setupApplicationTest } from 'ember-qunit';
 
 module('Acceptance | my rentals', function(hooks) {
-  setupApplicationTest(hooks);
+	
+	setupApplicationTest(hooks);
+  hooks.beforeEach(function(){
+	  this.owner.setupRouter();
+	this.owner.lookup('service:firebase');
+})
 
-  test('visiting /', async function(assert) {
-    await visit('/');
+	hooks.afterEach(function(){
+	this.owner.lookup('service:firebase').firebaseApp.delete();
+	this.owner.lookup('service:firebase').store.terminate();
 
+	})
+
+test('visiting /', async function(assert) {
+	await visit('/');
+	
 	assert.equal(currentURL(), '/');
 	assert.dom('nav').exists();
 	assert.dom('h1').hasText('SuperRentals');
 	assert.dom('h2').hasText('Welcome to Super Rentals!');
-
+	
 	var h2Expect = 'Welcome to Super Rentals!';
 	assert.dom('h2').hasText(h2Expect);
-
+	
 	assert.dom('.jumbo a.button').hasText('About Us');
-
+	
 	await click('.jumbo a.button');
-
+	
 	assert.equal(currentURL(), '/about');
   });
 
@@ -28,7 +39,7 @@ module('Acceptance | my rentals', function(hooks) {
 	assert.dom('.rental').exists({count:3});
 
 	await click('.rental:first-of-type a');
-	assert.equal(currentURL(), '/rentals/grand-old-mansion');
+	assert.equal(currentURL(), '/rentals/downtown-charm');
   });
 
   test('visiting /rentals/grand-old-mansion', async function(assert){
@@ -51,6 +62,7 @@ module('Acceptance | my rentals', function(hooks) {
     );
 
   });
+  
 
   test('visiting /about', async function(assert){
 
