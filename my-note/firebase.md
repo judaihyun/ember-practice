@@ -5,8 +5,9 @@
 
 # example
 
-https://firebase.google.com/docs/reference/js/firebase?authuser=0#initializeapp
+api docs : https://firebase.google.com/docs/reference/js/firebase?authuser=0#initializeapp
 
+data model guide : https://firebase.google.com/docs/firestore/data-model?authuser=0
 
 # Data Model
 
