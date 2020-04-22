@@ -1,11 +1,12 @@
 
 # Firebase용 Clund Functions
 
-https://firebase.google.com/docs/functions?hl=ko
+- 공식 문서
+1. https://firebase.google.com/docs/functions?hl=ko
 
-https://cloud.google.com/functions/docs ( 추천 )
+2. https://cloud.google.com/functions/docs ( 추천 )
 
-*실제 funciton관련 수정,로그,테스트의 기능들은 firebase console페이지가 아닌 google cloud페이지에 존재*
+**실제 funciton관련 수정,로그,테스트의 기능들은 firebase console페이지가 아닌 아래 링크의 google cloud페이지에 존재**
 
 https://console.cloud.google.com/
 
@@ -23,10 +24,11 @@ https://console.cloud.google.com/
 
 ## 간단 설명
 
-- google cloud에서 웹상(웹편집기 제공)에서 nodejs기반, js를 작성하거나, 로컬 vscode등의 IDE에서 생성 후 deploy하는 방법이 있음.
+- google cloud에서 웹상(웹편집기 제공)에서 nodejs기반 웹 편집기를 제공하므로 이것을 이용
+로컬 vscode등의 IDE에서 gcloud등의 gcloud function cli을 이용하여 deploy하는 방법이 있음.
 
 # 시작하기
-편
+
 아래 두개의 함수는 build이나 제공함수가 아니라 설명을 위한 편의로 만든 사용자 정의 함수.
 
 - `addMessage()` : HTTP 엔드포인트, 요청이 들어오면 `onRequest()`콜백에 전달된다.
