@@ -1,56 +1,50 @@
-'use strict';
-
 module.exports = {
-  root: true,
-  parser: 'babel-eslint',
-  parserOptions: {
-    ecmaVersion: 2018,
-    sourceType: 'module',
-    ecmaFeatures: {
-      legacyDecorators: true
-    }
-  },
-  plugins: [
-    'ember'
-  ],
-  extends: [
-    'eslint:recommended',
-    'plugin:ember/recommended'
-  ],
-  env: {
-    browser: true
-  },
-  rules: {
-    'ember/no-jquery': 'error'
-  },
-  overrides: [
-    // node files
-    {
-      files: [
-        '.eslintrc.js',
-        '.template-lintrc.js',
-        'ember-cli-build.js',
-        'testem.js',
-        'blueprints/*/index.js',
-        'config/**/*.js',
-        'lib/*/index.js',
-        'server/**/*.js'
-      ],
-      parserOptions: {
-        sourceType: 'script'
-      },
-      env: {
-        browser: false,
-        node: true
-      },
-      plugins: ['node'],
-      rules: Object.assign({}, require('eslint-plugin-node').configs.recommended.rules, {
-        // add your custom rules and overrides for node files here
-
-        // this can be removed once the following is fixed
-        // https://github.com/mysticatea/eslint-plugin-node/issues/77
-        'node/no-unpublished-require': 'off'
-      })
-    }
-  ]
+	plugins: ["ember"],
+	env: {
+		browser: true,
+		es6: true,
+	},
+	extends: [
+		"airbnb-base",
+		"eslint:recommended",
+		"plugin:ember/recommended",
+	],
+	globals: {
+		Atomics: "readonly",
+		SharedArrayBuffer: "readonly",
+	},
+	parserOptions: {
+		ecmaVersion: 2018,
+		sourceType: "module",
+	},
+	rules: {
+		'indent': [
+			2,
+			"tab",
+		],
+		"semi": [
+			"error",
+			"always",
+		],
+		"one-var": [2,
+			{
+				var: "never",
+			},
+		],
+		"func-names": ["error", "never"],
+		"no-plusplus": ["error", { allowForLoopAfterthoughts: true }],
+		"prefer-arrow-callback": ["error", { allowNamedFunctions: false }],
+		"no-tabs": 0,
+		"no-console": "off",
+		"linebreak-style": 0,
+		"no-trailing-spaces": 0,
+		"keyword-spacing": 0,
+		"no-unused-vars": 1,
+		"space-before-function-paren": 0,
+		"eol-last": 0,
+		"consistent-return": ["error", { 'treatUndefinedAsUnspecified': false }],
+		"padded-blocks": ["error", { "blocks": "never" }],
+		"quote-props": [2, "consistent"],
+		"quotes": ['off', 'single'],
+	},
 };
