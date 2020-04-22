@@ -83,11 +83,30 @@ exports.addMessage = functions.https.onRequest(async (req, res) => {
 
 
 
+=================================================
+
+# 로컬에서 함수 실행
+
+https://firebase.google.com/docs/functions/local-emulator?hl=ko#top_of_page
+
+Firebase CLI에는 다음 함수 유형을 에뮬레이션할 수 있다.
+1. HTTPS 함수
+2. 호출 가능 함수
+3. Cloud Firestore 함수
+
+함수를 배포하기 전에 로컬에서 테스트 실행이 가능..
 
 
+1. firebase CLI를 설치.
+
+2. functions내에 다른 firebase API와 상호작용하게 하기 위해서는 관리자 인증 정보를 설정해야함.
+
+- 이를 위해서는 FIREbase Admin SDK가 필요하며, 이를 위해서는 java설치가 필요하다. ( AdminSdk -  https://firebase.google.com/docs/admin/setup?hl=ko )
 
 
+2-1. 
+- firebase console(해당프로젝트) settings > 서비스 계정 
+- 새 비공개 키 생성 -> 다운로드
+-  Admin SDK 구성 스니펫(새 비공개 설정 버튼 위)의 소스 코드를 현재 테스트 하려는 function에서 initializeApp으로써 사용해야함.
 
-
-
-
+2-2. 위의 링크 내용과 같이. 해당 키를 로컬에 다운로드 받고 해당 파일의 위치를 vscode내 환경변수 설정해야함.
