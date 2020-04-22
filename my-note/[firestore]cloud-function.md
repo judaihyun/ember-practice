@@ -2,6 +2,7 @@
 # Firebase용 Clund Functions
 
 https://firebase.google.com/docs/functions?hl=ko
+
 https://cloud.google.com/functions/docs ( 추천 )
 
 *실제 funciton관련 수정,로그,테스트의 기능들은 firebase console페이지가 아닌 google cloud페이지에 존재*
