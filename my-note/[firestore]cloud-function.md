@@ -4,9 +4,11 @@
 - 공식 문서
 1. https://firebase.google.com/docs/functions?hl=ko
 
-2. https://cloud.google.com/functions/docs ( 추천 )
+2. https://cloud.google.com/functions/docs
 
 **실제 funciton관련 수정,로그,테스트의 기능들은 firebase console페이지가 아닌 아래 링크의 google cloud페이지에 존재**
+
+firebase와 cloud 플랫폼은 연동이 가능한데 통합하려면 blaze요금제로 변경해야함.
 
 https://console.cloud.google.com/
 
