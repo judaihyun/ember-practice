@@ -24,3 +24,22 @@
 /bower.json.ember-try
 /package.json.ember-try
 package-lock.json
+
+
+# IDE setting
+settings.json
+
+# logs
+firebase-debug.log
+firestore-debug.log
+.firebase/hosting*
+
+
+# functions
+functions/.eslintrc.json
+functions/package.json
+
+# firebase setting
+firebase.json
+.eslintrc.js
+.firebase/
