@@ -118,4 +118,17 @@ Firebase CLI에는 다음 함수 유형을 에뮬레이션할 수 있다.
 2-2. 위의 링크 내용과 같이. 해당 키를 로컬에 다운로드 받고 해당 파일의 위치를 vscode내 환경변수 설정해야함.
 
 
+## 에뮬레이터 도구 모음 실행
+
+- 실행
+```
+firebase emulators:start
+```
+를 실행하면 `firebase init`를 사용하여 로컬 프로젝트에서 초기화한 functions용 에뮬레이터가 실행됩니다. 특정 시뮬레이터를 시작하려면 `--only`플래그를 사용.
+
+```
+firebase emulators:start --only functions
+```
+
+
 
