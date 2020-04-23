@@ -6,7 +6,8 @@
 
 2. https://cloud.google.com/functions/docs
 
-**실제 funciton관련 수정,로그,테스트의 기능들은 firebase console페이지가 아닌 아래 링크의 google cloud페이지에 존재**
+**실제 funciton 관련 수정,로그,테스트의 기능들은**
+**firebase console페이지가 아닌 아래 링크의 google cloud페이지에 존재**
 
 firebase와 cloud 플랫폼은 연동이 가능한데 통합하려면 blaze요금제로 변경해야함.
 
@@ -19,6 +20,7 @@ https://console.cloud.google.com/
 1. Clud Functions 설정 : firebase CLI설치 후 firebase 프로젝트의 cloud funciton을 초기화 합니다.
 
 2. Function 작성 : JS 또는 배포시 변환 컴파일할 TS코드를 작성
+(local 에뮬레이터를 이용, 로컬 프로젝트에서 js작성 후 deploy)
 
 3. Funciton Test : 로컬 에뮬레이터를 사용하여 함수를 테스트
 
@@ -26,12 +28,16 @@ https://console.cloud.google.com/
 
 ## 간단 설명
 
-- google cloud에서 웹상(웹편집기 제공)에서 nodejs기반 웹 편집기를 제공하므로 이것을 이용
-로컬 vscode등의 IDE에서 gcloud등의 gcloud function cli을 이용하여 deploy하는 방법이 있음.
+- google cloud(통합필요)에서 웹상(웹편집기 제공)에서 nodejs기반 웹 편집기를 제공하므로 이것을 이용, 하거나 로컬 vscode등의 IDE에서 gcloud등의 gcloud function cli을 이용하여 deploy하는 방법이 있음.
+
+- gcloud를 이용하지 않고 직접 로컬에서 test 후 deploy 하는 방법.
+
+
+
 
 # 시작하기
 
-아래 두개의 함수는 build이나 제공함수가 아니라 설명을 위한 편의로 만든 사용자 정의 함수.
+아래 두개의 함수는 built-in 이 아니라 설명을 위한 편의로 만든 사용자 정의 함수.
 
 - `addMessage()` : HTTP 엔드포인트, 요청이 들어오면 `onRequest()`콜백에 전달된다.
 export.[함수명] = functions.https.onRequest(async (req, res) => { ~~ 
@@ -85,7 +91,7 @@ exports.addMessage = functions.https.onRequest(async (req, res) => {
 
 =================================================
 
-# 로컬에서 함수 실행
+# 로컬에서 함수 실행(local emulator)
 
 https://firebase.google.com/docs/functions/local-emulator?hl=ko#top_of_page
 
@@ -101,7 +107,7 @@ Firebase CLI에는 다음 함수 유형을 에뮬레이션할 수 있다.
 
 2. functions내에 다른 firebase API와 상호작용하게 하기 위해서는 관리자 인증 정보를 설정해야함.
 
-- 이를 위해서는 FIREbase Admin SDK가 필요하며, 이를 위해서는 java설치가 필요하다. ( AdminSdk -  https://firebase.google.com/docs/admin/setup?hl=ko )
+- 이를 위해서는 Firebase Admin SDK가 필요하며, 이를 위해서는 java설치가 필요하다. ( AdminSdk -  https://firebase.google.com/docs/admin/setup?hl=ko )
 
 
 2-1. 
@@ -110,3 +116,6 @@ Firebase CLI에는 다음 함수 유형을 에뮬레이션할 수 있다.
 -  Admin SDK 구성 스니펫(새 비공개 설정 버튼 위)의 소스 코드를 현재 테스트 하려는 function에서 initializeApp으로써 사용해야함.
 
 2-2. 위의 링크 내용과 같이. 해당 키를 로컬에 다운로드 받고 해당 파일의 위치를 vscode내 환경변수 설정해야함.
+
+
+
