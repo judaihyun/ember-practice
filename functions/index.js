@@ -27,9 +27,9 @@ exports.selectAll = functions.https.onRequest(async (req, res) => {
 	res.json({result: result.data()});
 })
 
-exports.hellow = (req,res) => {
+exports.hellow = functions.https.onRequest(async(req,res) => {
 	let message = req.query.message || req.body.message || 'Hello!!';
 	res.status(200).send(message);
-};
+});
 
 
