@@ -21,6 +21,10 @@ Note. `application`뿐만 아니라 `ApplicationInstance`에서도 test와 같�
 
 `user` custom factory type을 생성하고 싶다면 다음과 같이 [application.register('user:user-to-register')](https://api.emberjs.com/ember/3.17/classes/Application/methods/register?anchor=register)로 등록가능하다.
 
+
+
+#
+
 ``` application 
 ember generate initializer [name]
 ```
@@ -30,6 +34,65 @@ ember generate instance-initializer [name]
 ```
 
 
+## Factory Inject
+
+Once a factory is registered, it can be 'injected' where it is needed.
+
+```  app/initializers/logger.js
+import EmberObject from '@ember/object';
+
+export function initialize(application) {
+  let Logger = EmberObject.extend({
+    log(m) {
+      console.log(m);
+    }
+  });
+
+  application.register('logger:main', Logger);
+
+  application.inject('route', 'logger', 'logger:main');
+	또는
+	application.inject('route:index', 'logger', 'logger:main');
+}
+
+export default {
+  name: 'logger',
+  initialize: initialize
+};
+```
+
+위와 같이 'injected'된 factory는 아래와 같이 접근 할 수 있다.
+
+```   app/routes/index.js
+import Route from '@ember/routing/route';
+
+export default Route.extend({
+  activate() {
+    // The logger property is injected into all routes
+    this.logger.log('Entered the index route!');
+  }
+});
+```
+
+
+## Factory Instance Lookups
+
+https://guides.emberjs.com/release/applications/dependency-injection/#toc_factory-instance-lookups
+
+실행 중인 application에서 인스턴스화 된 factory를 가져오기 위해서는 `lookup` mehtod를 사용한다. 
+
+```
+applicationInstance.lookup('factory-type:factory-name');
+```
+
+
+## Initializers
+
+There are two types of initializers: application initializers and application instancfe initializers.
+
+1. application initializer : 어플리케이션이 boot될 때 실행되며, DI를 설정하게 한다.
+
+2. application instance initializer : application instance가 로드될때 사용된다. 
 
 
 
