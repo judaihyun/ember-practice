@@ -131,4 +131,23 @@ firebase emulators:start --only functions
 ```
 
 
+- 실행화면
+해당 함수명과 해당 url이 표시되고.
+localhost:5001로 local emulator가 구동됨을 확인.
+
+```
+i  emulators: Starting emulators: functions
+!  emulators: It seems that you are running multiple instances of the emulator suite for
+project my-firest-66bb6. This may result in unexpected behavior.
++  hub: emulator hub started at http://localhost:4400
+!  Your requested "node" version "8" doesn't match your global version "12"
++  functions: functions emulator started at http://localhost:5001
+i  functions: Watching "C:\Users\User\Documents\ember-practice\functions" for Cloud Functions...
++  functions[addMessage]: http function initialized (http://localhost:5001/my-firest-66bb6/us-central1/addMessage).
++  functions[selectAll]: http function initialized (http://localhost:5001/my-firest-66bb6/us-central1/selectAll).
++  emulators: All emulators started, it is now safe to connect.
++  functions[hellow]: http function initialized (http://localhost:5001/my-firest-66bb6/us-central1/hellow).
+i  functions: Beginning execution of "hellow"
+i  functions: Finished "hellow" in ~1s
+```
 
