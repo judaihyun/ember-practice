@@ -103,4 +103,36 @@ https://guides.emberjs.com/release/applications/dependency-injection/#toc_factor
 
 
 
+# Specifying the URL Type
+
+- The EMber router has four options to manage your application's URL
+
+1. History : HTML5 History API
+2. Hash : a태그 based URLs
+3. Auto : `hash`를 사용하고 browser가 지원하지 않으면 `none`.
+4. None : URL을 업데이트 하지 않는다.
+
+Ember CLI는 `auto`가 default. `config/environment.js`의 `ENV.locationType`에서 설정한다.
+
+## History
+- uses the browser's history API.
+
+## hash
+- 
+
+
+# Embedding Applications
+
+## Changing the Root Element
+
+기본적으로 application은 `application template`을 랜더링하여 document's `body`element에 attach.
+
+`app/app.js`에 `rootElement`속성을 지정해서 `application template`을 다른 element에 추가하라고 지시할 수 있습니다.
+
+
+## Specifying a Root URL
+
+`config/environment.js`의 `rootURL`속성에 지정 가능.
+
+
 
