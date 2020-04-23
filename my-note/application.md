@@ -95,4 +95,12 @@ There are two types of initializers: application initializers and application in
 2. application instance initializer : application instance가 로드될때 사용된다. 
 
 
+# Run Loop
+
+## An example of the internals
+
+https://guides.emberjs.com/release/applications/dependency-injection/#toc_factory-instance-lookups
+
+
+
 
