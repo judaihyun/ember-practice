@@ -5,7 +5,7 @@ A route's JS file is one of the best places in an app to make requests to an API
 
 - When a user first visits the `/favorites-posts` route, the `model` hook in `app/routes/favorite-posts.js` **will automatically run.**
 
-- `model` hook을 이용하여 없는 주요 이유는 
+- `model` hook을 이용하는 주요 이유는 
 1. better user experience
 2. 로딩 및 오류를 적절하게 사용하여 better user experience
 3. Dealing with concurrency
