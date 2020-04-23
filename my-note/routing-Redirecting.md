@@ -21,3 +21,4 @@ export default class IndexRoute extends Route {
 beforeModel() 는 현재 transition을 argument로 받을 수 있는데, 이는 현재의 transition을 저장 후 다시 되돌아가기위해서 사용할수있다. 예를 들면 로그인 실패시..
 
 
+
