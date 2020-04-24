@@ -134,33 +134,3 @@ Ember CLI는 `auto`가 default. `config/environment.js`의 `ENV.locationType`에
 
 `config/environment.js`의 `rootURL`속성에 지정 가능.
 
-
-## Debuggin
-
-# Routing
-
-https://guides.emberjs.com/v3.15.0/configuring-ember/debugging/
-
-
-- Log router transitions
-
-``` app/app.js
-import Application from '@ember/application';
-
-export default Application.extend({
-  // Basic logging, e.g. "Transitioned into 'post'"
-  LOG_TRANSITIONS: true,
-
-  // Extremely detailed logging, highlighting every internal
-  // step made while transitioning into a route, including
-  // `beforeModel`, `model`, and `afterModel` hooks, and
-  // information about redirects and aborted transitions
-  LOG_TRANSITIONS_INTERNAL: true
-});
-```
-
-- Log view lookups
-
-``` config/environment.js
-ENV.APP.LOG_VIEW_LOOKUPS = true;
-```

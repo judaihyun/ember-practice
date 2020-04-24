@@ -21,4 +21,21 @@ export default class IndexRoute extends Route {
 beforeModel() 는 현재 transition을 argument로 받을 수 있는데, 이는 현재의 transition을 저장 후 다시 되돌아가기위해서 사용할수있다. 예를 들면 로그인 실패시..
 
 
+# Preventing and Retrying Transitions
+
+
+
+
+
+
+
+# Asynchronous-routing
+
+https://guides.emberjs.com/v3.15.0/routing/asynchronous-routing/
+
+
+## The Router는 Promise를 위해 pause 된다.
+
+`model` hook(`beforeModel` or `afterModel`)이 object나 array를 return하면 그 즉시 상태 이동이 완료 된다. 그러나 `model` hook이 promise를 리턴할 때는 promise가 fulfill되거나 reject될때까지 상태이동(`transition`)은 pause된다.
+
 
