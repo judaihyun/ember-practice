@@ -10,26 +10,12 @@ export default class IndexRoute extends Route{
 
 	async model(){
 		let arr = [];
-		let ret = await this.fb.store.collection("rentals")
-			.get()
-			.then(q=>{
-				q.forEach(function(doc){
-					arr.push(doc.data());
-				})
-			});
 
-			/*
-		this.store.findRecord('rentals', 'grand-old-mansion').then(
-			i=>{
-				console.log(i);
-			}
-		);
-
-		this.store.findAll('rentals').then(i=>{
-				console.log(i);
-		})
-		*/
-	
+		let ret = await this.fb.getAll();
+		ret.forEach(function(doc){
+			arr.push(doc.data());
+			console.log(doc.data());
+		});
 
 		return arr.map(i=>{
 			let {id, attributes } = i;

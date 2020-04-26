@@ -15,11 +15,13 @@ export default class FirebaseService extends Service {
 	}
 
 
-	async getRent(param){
-		var result = await this.store.collection("rentals").doc(param)
-		.get()
-		.then(q=> q.data() );
-		
+	getRent(param){
+		var result = this.store.collection("rentals").doc(param).get();
+		return result;
+	}
+
+	getAll(){
+		var result = this.store.collection("rentals").get();
 		return result;
 	}
 }
