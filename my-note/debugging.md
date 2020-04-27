@@ -34,3 +34,6 @@ ENV.APP.LOG_VIEW_LOOKUPS = true;
 
 - Use the `{{debugger}}` or `{{log}}` helper to inspect the `{{@model}}` from the template
 
+https://api.emberjs.com/ember/release/classes/Ember.Templates.helpers/methods/debugger?anchor=debugger
+
+chrome console에서 get('@model');와 같은 식으로 사용.
