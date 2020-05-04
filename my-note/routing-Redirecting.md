@@ -8,6 +8,9 @@
 2. The other one is `replaceWith()` which works the same way as `transitionTo()`. 유일한 차이는 history manage, `replaceWith()`는 현재의 route entry를 이곳에서 정한 경로로 대체하는 반면, `transitionTo()`는 현재의 route entry를 떠나 새로운 리다이렉션을 위한 entry를 만든다.
 
 
+**새로운 route가 dynamic segment를 가질 경우, model이나 식별자를 각 segment에 전달하여야 합니다. 또한 model이 이미 로드되었을 경우,`<link-to>`나 `transitionTo()`를 통하여 transtition된 경우,  `model()`hook은 동작하지 않음.**
+
+
 ``` app/routes/index.js
 import Route from '@ember/routing/route';
 
@@ -18,7 +21,7 @@ export default class IndexRoute extends Route {
 }
 ```
 
-beforeModel() 는 현재 transition을 argument로 받을 수 있는데, 이는 현재의 transition을 저장 후 다시 되돌아가기위해서 사용할수있다. 예를 들면 로그인 실패시..
+beforeModel() 는 이전 transition을 argument로 받을 수 있는데, 이는 이전의 transition로 다시 되돌아가기위해서 사용할수있다. 예를 들면 로그인 실패시..
 
 
 # Preventing and Retrying Transitions
