@@ -10,6 +10,11 @@
 
 **새로운 route가 dynamic segment를 가질 경우, model이나 식별자를 각 segment에 전달하여야 합니다. 또한 model이 이미 로드되었을 경우,`<link-to>`나 `transitionTo()`를 통하여 transtition된 경우,  `model()`hook은 동작하지 않음.**
 
+```
+	return this.router.transitionTo()
+	에서 return을 뺄것.
+	https://github.com/emberjs/ember.js/issues/5566#issuecomment-435522680
+```
 
 ``` app/routes/index.js
 import Route from '@ember/routing/route';
