@@ -9,6 +9,8 @@ api docs : https://firebase.google.com/docs/reference/js/firebase?authuser=0#ini
 
 data model guide : https://firebase.google.com/docs/firestore/data-model?authuser=0
 
+api guide : https://googleapis.dev/nodejs/firestore/latest/index.html
+
 # Data Model
 
 
