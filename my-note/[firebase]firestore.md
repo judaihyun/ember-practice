@@ -152,5 +152,27 @@ doc()뒤에 .where()를 붙여 검색하는 것이 가능하다.
 
 
 
+- 중첩된 객체의 필드 업데이트
+: `update()`를 호출할 때 '점 표기법'을 사용하여 참조가 가능하다.
+
+```
+let initialData = {
+  name: 'Frank',
+  age: 12,
+  favorites: {
+    food: 'Pizza',
+    color: 'Blue',
+    subject: 'recess'
+  }
+};
+
+// ...
+let updateNested = db.collection('users').doc('Frank').update({
+  age: 13,
+  'favorites.color': 'Red'
+});
+
+```
+
 
 
