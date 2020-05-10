@@ -46,6 +46,10 @@ born : 1815
 
 컬렉션/문서 참조는 서로 다른 작업을 수행한다. 컬렉션 참조는 컬렉션의 문서를 쿼리 할 수 있고, 문서 참조는 개별 문서를 읽거나 쓸 수 있다.
 
+
+**collection('users').docs(); 의 경우 아래의 설명과 같이 자동 ID가 리턴된다.**
+ If no path is specified, an automatically-generated unique ID will be used for the returned DocumentReference.
+
 ## 계층적 데이터
 
 ```
