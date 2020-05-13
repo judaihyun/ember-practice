@@ -151,3 +151,9 @@ i  functions: Beginning execution of "hellow"
 i  functions: Finished "hellow" in ~1s
 ```
 
+# test
+
+실행: npm test 
+
+해당 설정등을 해야 위의 커맨드가 수행됨.
+
