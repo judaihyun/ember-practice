@@ -16,3 +16,8 @@
 - **output파일 확장자 csv,json중 기입**
 
 - *목록 가져오기 시, firebase콘솔 상 인증목록에 import가 되었다고 해도, 실제 반영까지 다소 시간이 소요됨.*
+
+
+# hostirng deploy
+
+- firebase deploy --only hosting

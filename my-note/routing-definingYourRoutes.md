@@ -17,11 +17,13 @@ Router.map(function(){
 });
 ```
 
-/about 접속시 about template을 렌더
-/favs 접속시 favorites template을 렌더한다.
-{path:''} 가 없을 경우 route name
-기본적으로 `about`의 경우 about.js가 기본 route handler가 사용되며
+/about 접속시 about template을 렌더, /favs 접속시 favorites template을 렌더한다.
+{path:''} 가 없을 경우 route name, 기본적으로 `about`의 경우 about.js가 기본 route handler가 사용되며
 about.hbs가 template으로 사용된다.
+
+# Nested Routes
+
+
 
 # The Application route
 
@@ -31,7 +33,7 @@ You should put your header, footer, and any other decorative content here.
 
 # Index Routes
 ```
-Router.map(function() {
+Router.map(function() { 
   this.route('index', { path: '/' });
   this.route('favorites');
 });
